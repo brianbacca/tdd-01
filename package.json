@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "app",
-    "test": "jest"
+    "test": "jest --coverage --watch"
   },
   "keywords": [],
   "author": "",
