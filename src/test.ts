@@ -1,3 +1,3 @@
 function test (): number {
-  return 26;
+  return 25
 }

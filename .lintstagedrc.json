@@ -1,0 +1,6 @@
+{
+  "*,ts":[
+    "eslint 'src/**' --fixed",
+    "git add" 
+  ]
+}
