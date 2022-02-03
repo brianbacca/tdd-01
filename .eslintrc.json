@@ -1,0 +1,9 @@
+{
+  "extends": "standart-with-typescript",
+  "parseOptions": {
+    "project": "./tsconfig.json"
+  },
+  "roles": {
+    "@typescript-eslint/no-redeclare": "off"
+  }
+}
