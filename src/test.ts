@@ -1,3 +1,3 @@
-function test (): number {
+function tested (): number {
   return 25
 }
