@@ -1,5 +1,5 @@
 import { RegisterVehicle } from "../controllers/register-vehicle";
-
+import { MissingFormalParameter } from "../errors/client-error";
 describe("RegisterVehicle", () => {
   test("is the does not exist return 400", () => {
     const sut = new RegisterVehicle();
@@ -8,11 +8,14 @@ describe("RegisterVehicle", () => {
         // name: "Nissan",
         model: "DXT",
         year: 2020,
+        color: "blue",
       },
     };
     const httpResponse = sut.handle(httpRequest);
     expect(httpResponse.statusCode).toBe(400);
-    expect(httpResponse.body).toEqual(new Error("error in the: name"));
+    expect(httpResponse.body).toEqual(
+      new MissingFormalParameter("name")
+    );
   });
   test("is the model not exist return 400", () => {
     const sut = new RegisterVehicle();
@@ -21,11 +24,14 @@ describe("RegisterVehicle", () => {
         name: "Nissan",
         // model: "DXT",
         year: 2020,
+        color: "blue",
       },
     };
     const httpResponse = sut.handle(httpRequest);
     expect(httpResponse.statusCode).toBe(400);
-    expect(httpResponse.body).toEqual(new Error("error in the: model"));
+    expect(httpResponse.body).toEqual(
+      new MissingFormalParameter("model")
+    );
   });
   test("is the year not exist return 400", () => {
     const sut = new RegisterVehicle();
@@ -34,11 +40,14 @@ describe("RegisterVehicle", () => {
         name: "Nissan",
         model: "DXT",
         // year: 2020,
+        color: "blue",
       },
     };
     const httpResponse = sut.handle(httpRequest);
     expect(httpResponse.statusCode).toBe(400);
-    expect(httpResponse.body).toEqual(new Error("error in the: year"));
+    expect(httpResponse.body).toEqual(
+      new MissingFormalParameter("year")
+    );
   });
   test("is the color not exist return 400", () => {
     const sut = new RegisterVehicle();
@@ -52,6 +61,8 @@ describe("RegisterVehicle", () => {
     };
     const httpResponse = sut.handle(httpRequest);
     expect(httpResponse.statusCode).toBe(400);
-    expect(httpResponse.body).toEqual(new Error("error in the: color"));
+    expect(httpResponse.body).toEqual(
+      new MissingFormalParameter("color")
+    );
   });
 });
