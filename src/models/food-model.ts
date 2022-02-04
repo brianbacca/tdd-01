@@ -1,5 +1,6 @@
 import { FoodHelper } from "../helpers/food-model-helper";
 
+
 export class FoodModel {
   constructor(private readonly food: FoodHelper) {}
 
@@ -11,5 +12,9 @@ export class FoodModel {
   }
   getPrice(): number {
     return this.food.price;
+  }
+
+  getFood(): any {
+    return Object.assign(this, this.food);
   }
 }

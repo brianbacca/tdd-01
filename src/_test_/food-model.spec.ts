@@ -8,6 +8,7 @@ describe("Class", () => {
       price: 1200,
     });
 
+    expect(foodModel.getFood()).toEqual(foodModel);
     expect(foodModel.getName()).toEqual("Guiso");
     expect(foodModel.getDescription()).toEqual("Guiso de lenteja");
     expect(foodModel.getPrice()).toBe(1200);
