@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --watch",
-    "start": "tsnd --transpile-only --respawn --ignore-watch node_modules src/main/server/server.ts"
+    "test": "jest --watch",
+    "start": "tsnd --transpile-only --respawn --ignore-watch node_modules src/main/server/server.ts",
+    "test:unit": "npm test -- -c jest-unit-config.js",
+    "test:int": "npm test -- --watch -c jest-int-config.js"
   },
   "keywords": [],
   "author": "",
